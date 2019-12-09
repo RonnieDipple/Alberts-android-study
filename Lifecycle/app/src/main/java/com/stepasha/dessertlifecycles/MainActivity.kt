@@ -8,6 +8,11 @@ import androidx.lifecycle.LifecycleObserver
 import com.stepasha.dessertlifecycles.databinding.ActivityMainBinding
 import timber.log.Timber
 
+
+const val KEY_REVENUE = "key_revenue"
+const val KEY_SOLD = "key_sold"
+const val KEY_TIMER = "key_timer"
+
 class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     private var revenue = 0
@@ -41,7 +46,6 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         Timber.i("onCreate called")
 
         // Use Data Binding to get reference to the views
@@ -58,6 +62,11 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         binding.dessertButton.setImageResource(currentDessert.imageId)
 
         dessertTimer = DessertTimer(this.lifecycle)
+        if(savedInstanceState !=null){
+            revenue = savedInstanceState.getInt(KEY_REVENUE, 0)
+            dessertsSold = savedInstanceState.getInt(KEY_SOLD, 0)
+            dessertTimer.secondsCount = savedInstanceState.getInt(KEY_TIMER, 0)
+        }
 
     }
 
@@ -69,6 +78,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
         binding.revenue = revenue
         binding.amountSold = dessertsSold
+//now initializing the desert timer
 
         // Show the next dessert
         showNextDessert()
@@ -126,4 +136,23 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         super.onRestart()
         Timber.i("onRestart Called")
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+
+        outState.putInt(KEY_REVENUE, revenue)
+        outState.putInt(KEY_SOLD, dessertsSold)
+        outState.putInt(KEY_TIMER, dessertTimer.secondsCount)
+        Timber.i("onSavedInstanceState Called")
+        super.onSaveInstanceState(outState)
+
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+
+        super.onRestoreInstanceState(savedInstanceState)
+
+        Timber.i("onRestoreInstanceState Called")
+
+    }
+
+
 }
