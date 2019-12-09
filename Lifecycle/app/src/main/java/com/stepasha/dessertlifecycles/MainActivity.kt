@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             revenue = savedInstanceState.getInt(KEY_REVENUE, 0)
             dessertsSold = savedInstanceState.getInt(KEY_SOLD, 0)
             dessertTimer.secondsCount = savedInstanceState.getInt(KEY_TIMER, 0)
+            showNextDessert()
         }
 
     }
