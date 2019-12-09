@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">File Storage for Books</string>
+    <string name="add_book">add_book</string>
 </resources>
