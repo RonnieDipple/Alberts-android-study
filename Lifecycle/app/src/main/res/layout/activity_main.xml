@@ -28,7 +28,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            apps="@drawable/bakery_back" />
+            app:srcCompat="@drawable/bakery_back"
+            tools:ignore="VectorDrawableCompat" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/margin_end_guide"
