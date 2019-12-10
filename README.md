@@ -30,3 +30,39 @@ Create book repo interface
 Create Book Repo = where you specify how you wanna store the files and where  
 
 5. Favorite Movies Sprint MVVM
+
+6. Project Lifecycles
+
+Timber helps with writing log statements   
+-Timber generates tags  
+-Timber avoids logs in release  
+-Easy integration with crash reporting  
+
+To set up Timber:
+-Add Timber to build.gradle'  
+-Make Application class  
+-Add it to manifest  
+-Initialize Timber in Application class 
+
+After that Timber works just like Log.i 
+
+onCreate gets called only once  
+Fragments are better solution to working with different screen sizes   
+When starting something ion callback, make sure to stop it correspondingly  
+
+onSaveInstanceState handles storing information into a bundle while rotatiing the screen or going away from it
+
+
+7. Project Notifications 
+
+In the Notification class:
+
+Create notification channel to put it in the system and it is cast specific  
+Make sure sure the version of android is matching
+
+Use Builder pattern for older versions of android or  
+create a channel for newer versions
+
+Then place the notification you just built where you need it in the app 
+
+You can set sounds and vibrations to DEFAULT and HIGH_PRIORITY notifications 
