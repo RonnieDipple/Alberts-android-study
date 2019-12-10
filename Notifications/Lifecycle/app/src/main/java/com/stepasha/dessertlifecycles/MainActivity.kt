@@ -1,11 +1,15 @@
 package com.stepasha.dessertlifecycles
 
+import android.app.PendingIntent
+import android.content.Intent
+import android.os.Build.VERSION_CODES.O
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.stepasha.dessertlifecycles.databinding.ActivityMainBinding
+import com.stepasha.dessertlifecycles.util.Notification
 import timber.log.Timber
 
 
@@ -157,7 +161,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
 
         super.onRestoreInstanceState(savedInstanceState)
-
+        Notification.Notification(this)
+        val intent = Intent(this, MainActivity::class.java)
+        PendingIntent.getActivity (this, O, intent, PendingIntent.FLAG_ONE_SHOT  )
         Timber.i("onRestoreInstanceState Called")
 
     }

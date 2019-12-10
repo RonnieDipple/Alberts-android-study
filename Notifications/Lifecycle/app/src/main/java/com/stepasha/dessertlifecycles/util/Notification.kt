@@ -15,7 +15,7 @@ import com.stepasha.dessertlifecycles.MainActivity.Companion.NOTIFICATION_ID
 object Notification{
 
     @TargetApi(Build.VERSION_CODES.N)
-    fun BasicNotification(context: Context) {
+    fun Notification(context: Context) {
         //TODO 3
         //triggering the notification
         //regular intent to pass intent to next screen
@@ -41,7 +41,7 @@ object Notification{
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "You have rotated the screen"
             val importance = NotificationManager.IMPORTANCE_DEFAULT
-            val description = " Just continue playing"
+            val description = " Just continue playing or tap here to reset"
             // its just setting the description. description variable for my channel
 
             val channel = NotificationChannel(channelId, name, importance)
@@ -58,7 +58,7 @@ object Notification{
             .setPriority(NotificationManager.IMPORTANCE_DEFAULT)
             .setSmallIcon(android.R.drawable.ic_menu_today)
             .setContentTitle("You have rotated your screen")
-            .setContentText("Just continue Playing")
+            .setContentText("Just continue playing, or tap here to reset")
             .setAutoCancel(true) // removes notification once used
             //pending intent
             .setContentIntent(pendingContentIntent)
