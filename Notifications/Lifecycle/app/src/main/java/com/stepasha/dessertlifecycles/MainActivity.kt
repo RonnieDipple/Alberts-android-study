@@ -1,11 +1,15 @@
 package com.stepasha.dessertlifecycles
 
+import android.app.PendingIntent
+import android.content.Intent
+import android.os.Build.VERSION_CODES.O
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.stepasha.dessertlifecycles.databinding.ActivityMainBinding
+import com.stepasha.dessertlifecycles.util.Notification
 import timber.log.Timber
 
 
@@ -14,6 +18,13 @@ const val KEY_SOLD = "key_sold"
 const val KEY_TIMER = "key_timer"
 
 class MainActivity : AppCompatActivity(), LifecycleObserver {
+
+
+    companion object{
+        const val NOTIFICATION_ID = 1
+    }
+
+
 
     private var revenue = 0
     private var dessertsSold = 0
@@ -150,7 +161,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
 
         super.onRestoreInstanceState(savedInstanceState)
-
+        Notification.Notification(this)
+        val intent = Intent(this, MainActivity::class.java)
+        PendingIntent.getActivity (this, O, intent, PendingIntent.FLAG_ONE_SHOT  )
         Timber.i("onRestoreInstanceState Called")
 
     }
