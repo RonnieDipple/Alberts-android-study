@@ -15,6 +15,13 @@ const val KEY_TIMER = "key_timer"
 
 class MainActivity : AppCompatActivity(), LifecycleObserver {
 
+
+    companion object{
+        const val NOTIFICATION_ID = 1
+    }
+
+
+
     private var revenue = 0
     private var dessertsSold = 0
 
