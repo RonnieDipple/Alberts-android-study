@@ -1,16 +1,33 @@
 package com.stepasha.customhandlerthreads
 
+import java.io.IOException
 import java.util.*
 
-class FoodRunnable() : Runnable {
+//todo 3 manage the Runnable by declaring order handler thread
+
+class FoodRunnable(private var orderHandlerThread: OrderHandlerThread) : Runnable {
 
     private var thread: Thread = Thread(this)
     private var alive: Boolean = false
     private var count: Int = 0
     private var size: Int = 0
 
+
+    // now add the handler to run method
     override fun run() {
         alive = true
+        while (alive && count < size){
+            count++
+            val foodName = getRandomOrderName()
+            val foodPrice = getRandomOrderPrice()
+            orderHandlerThread.sendOrder(FoodOrder(foodName, foodPrice))
+            try{
+                Thread.sleep(5000)
+            }catch (e: IOException){
+                e.printStackTrace()
+
+            }
+        }
     }
 
     fun start() {
@@ -60,5 +77,8 @@ class FoodRunnable() : Runnable {
             8 -> 45f
             else -> 50f
         }
+    }
+    fun setMaxOrders(size: Int){
+        this.size = size
     }
 }
