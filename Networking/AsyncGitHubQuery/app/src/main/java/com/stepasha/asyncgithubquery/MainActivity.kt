@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         mSearchResultsTextView.setOnClickListener {
 
             makeGithubSearchQuery()
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private fun makeGithubSearchQuery() {
         val githubQuery: String = mSearchBoxEditText.text.toString()
         val githubSearchUrl: URL? = NetworkUtils.buildUrl(githubQuery)
-        mUrlDisplayTextView.text = githubSearchUrl.toString().replace(",", "\n")
+        mUrlDisplayTextView.text = githubSearchUrl.toString().replace("//", "\n\n")
         var githubSearchResults: String? = null
         GithubQueryTask(this).execute(githubSearchUrl)
 
@@ -87,6 +86,7 @@ class MainActivity : AppCompatActivity() {
     //    val thread1 = Thread(runnable)
     //    thread1.start() // Will output: Thread[Thread-1,5,main] has run
     //}
+
 
 }
 
