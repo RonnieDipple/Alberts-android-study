@@ -66,3 +66,24 @@ create a channel for newer versions
 Then place the notification you just built where you need it in the app 
 
 You can set sounds and vibrations to DEFAULT and HIGH_PRIORITY notifications 
+
+8. Project AsyncGithubQuery
+
+Async Task is like simplified Facade of Custom Threads.   
+Async Tasks are used to run code in background so there isnt too much running in main thread  
+
+9. Project Custom Handler Threads  
+Threads work just like Async task and is keptAlive with a Looper  
+
+Create a Handler and attach the looper.  
+Once the handler is returned in form of an object overrride fun handleMessage  
+Handle the message in the object (code logic goes here)  
+Initialize the message and process it.  
+Then finally send it to UI  
+
+Once Handler created it has to be set up  
+Manage the Runnable by declaring orderHandlerThread  
+And then add it to run() overriden method  
+
+Then finally update the UI in main activity  
+
