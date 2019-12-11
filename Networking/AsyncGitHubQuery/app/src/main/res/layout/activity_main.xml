@@ -23,11 +23,19 @@
         android:layout_marginTop="8dp"
         android:text="Click search and your URL will show up here!"
         android:textSize="22sp" />
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="500dp">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp">
+
 
 
 
@@ -38,11 +46,10 @@
             android:text="Make a search!"
             android:textSize="18sp" />
 
+
     </ScrollView>
-    <Button
-        android:id="@+id/buttonSearch"
-        android:text="SEARCH"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+
+</FrameLayout>
+
 
 </LinearLayout>

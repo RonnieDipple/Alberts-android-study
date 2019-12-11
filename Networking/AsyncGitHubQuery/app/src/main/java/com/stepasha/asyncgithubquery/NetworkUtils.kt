@@ -58,9 +58,9 @@ object NetworkUtils {
      */
     @Throws(IOException::class)
     fun getResponseFromHttpUrl(url: URL?): String? {
-        val urlConnection: HttpURLConnection = url.openConnection() as HttpURLConnection
+        val urlConnection: HttpURLConnection = url?.openConnection() as HttpURLConnection
         return try {
-            val `in`: InputStream = urlConnection.getInputStream()
+            val `in`: InputStream = urlConnection.inputStream
             val scanner = Scanner(`in`)
             scanner.useDelimiter("\\A")
             val hasInput: Boolean = scanner.hasNext()
