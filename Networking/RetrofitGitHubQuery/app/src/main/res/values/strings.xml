@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Retrofit GitHubQuery</string>
+    <string name="refresh">refresh</string>
+    <string name="ok">YES</string>
+</resources>
