@@ -87,3 +87,36 @@ And then add it to run() overriden method
 
 Then finally update the UI in main activity  
 
+10. Project JSON Parser  
+JSON  
+Java Script Object Notation  
+primary method for data exchange on web  
+it is human readable and builds arrays  
+
+We parse JSON into GSO before we can inser it into the field as a string,   
+and we can parse back to JSON to ommunicate back with the web  
+The app first uses the JSON to parse into GSON to store later into local phone storage   
+
+11. Retrofit GitHub Query  
+Update from Async Github Query  
+The difference is that Async Query App uses basic OkHttp calls to get the data,   
+while retrofit does the same thing in much nicer way.  
+
+Retrofit is the REST client to upload JSON via REST Based Web Services     
+Retrofit uses Http library for Http requests  
+OkHttp also contains logging interceptor  
+While OkHttp makes low level calls and is able to cache them, retrofit is abl;e to manimulate URL and is coupled with OkHttp to make the network calls.  
+
+12. Broadcast Receiver TaskMaker
+
+Broadcast Receivers are used to monitor state of the phone or an event.  
+in this app Broadcast Receiver is used to build a clock and listen for time change and update the UI with each change.   
+Its best when you register the receiver, to unregister it onPause() or onStop()  
+so the receiver wont continue running in the background  
+Services are also good for running in the background. Unlike Broadcast Receivers   
+Services are not visible on UI  
+also app contains the stops on how to set up on click listeners using Lambda  
+
+13. Networking Sprint Challenge Pokemon API  
+Redone from scratch. Using Okhttp3, Retrofit2, Recyclerview, CardView, Picasso to loasd the sprites(images)  
+
