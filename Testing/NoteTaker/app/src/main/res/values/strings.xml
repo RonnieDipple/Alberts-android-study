@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NoteTaker</string>
+    <string name="view">view</string>
+    <string name="add">add</string>
+    <string name="search">search</string>
+    <string name="updatenote">updatenote</string>
+    <string name="deletenote">deletenote</string>
+    <string name="savenote">savenote</string>
+    <string name="title">title</string>
+    <string name="notes">notes</string>
+    <string name="searchnote">searchnote</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+    <string name="picture">Picture</string>
+</resources>
