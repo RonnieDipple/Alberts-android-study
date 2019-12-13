@@ -5,4 +5,8 @@
     <string name="add">Favorite?</string>
     <string name="plus">+</string>
     <string name="_25">25</string>
+    <string name="find_pokemon_by_id">Find pokemon by id</string>
+    <string name="view_favs">VIEW FAVS</string>
+    <string name="cancel">cancel</string>
+    <string name="delete">delete</string>
 </resources>
