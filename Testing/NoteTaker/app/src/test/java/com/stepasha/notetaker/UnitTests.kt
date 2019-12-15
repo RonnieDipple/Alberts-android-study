@@ -15,6 +15,10 @@ import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.robolectric.android.controller.ActivityController
 
+/**
+ * referenced from android documentation @ developer.android.com
+ * built around the reference
+ */
 
 @RunWith(JUnit4::class)
 public class UnitTests {
@@ -68,8 +72,8 @@ public class UnitTests {
         val result: String = NotesModel(0,"Test Note","myNote", "05/05/2020").toString()
 
         // ...then the result should be the expected one.
-        var FAKE_STRING = NotesModel(0,"Test Note","myNote", "05/05/2020").toString()
-        Assert.assertNotNull(FAKE_STRING)
+        var FAKE_STRING = NotesModel(1,"Test Note","myNote", "05/05/2020").toString()
+        Assert.assertNotEquals(FAKE_STRING, result)
     }
 }
 
