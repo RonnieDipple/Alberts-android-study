@@ -41,8 +41,8 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
     private var mLocationRequest: LocationRequest? = null
     private val listener: com.google.android.gms.location.LocationListener? = null
     //update intervals
-    private val UPDATE_INTERVAL = (2 * 1000).toLong()  /* 10 secs */
-    private val FASTEST_INTERVAL: Long = 2000 /* 2 sec */
+    private val UPDATE_INTERVAL = (4 * 1000).toLong()  /* 40 secs */
+    private val FASTEST_INTERVAL: Long = 10000 /* 10 sec */
 
     private var locationManager: LocationManager? = null
 
@@ -73,7 +73,7 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
 
 
     }
-    @SuppressLint("MissingPermission")
+
     override fun onConnected(p0: Bundle?) {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -135,7 +135,7 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
         // You can now create a LatLng Object for use with maps
         val latLng = LatLng(location.latitude, location.longitude)
     }
-    @SuppressLint("MissingPermission")
+
     private fun startLocationUpdates() {
         // Create the location request
         mLocationRequest = LocationRequest.create()
