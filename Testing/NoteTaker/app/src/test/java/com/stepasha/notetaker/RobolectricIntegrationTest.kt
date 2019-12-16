@@ -44,7 +44,7 @@ public class RobolectricIntegrationTest() {
         val fragment = ViewActivity()
         // When
         // Then
-        Assert.assertNotNull(fragment)
+        assertNotNull(fragment)
     }
 
 }

@@ -1,19 +1,23 @@
 package com.stepasha.notetaker
 
 
-import android.content.Context
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import android.app.Application
 import com.stepasha.notetaker.fragments.ViewFragment
 import com.stepasha.notetaker.models.NotesModel
-import org.hamcrest.MatcherAssert.assertThat
+import com.stepasha.notetaker.sql.DataHelper
+import junit.framework.Assert.assertEquals
+import junit.framework.Assert.assertSame
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
+import org.mockito.Mock
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.mock
 import org.robolectric.android.controller.ActivityController
+import java.util.*
+
 
 /**
  * referenced from android documentation @ developer.android.com
@@ -23,20 +27,37 @@ import org.robolectric.android.controller.ActivityController
 @RunWith(JUnit4::class)
 public class UnitTests {
 
+
     // ActivityController is a Robolectric class that drives the Activity lifecycle
     private var controller: ActivityController<MainActivity>? = null
+    //initializing activity
     lateinit var activity: MainActivity
-    //initializing fragment
-    lateinit var frag1 : ViewFragment
+
+     //initializing notes model
+    lateinit var notesModel: NotesModel
+    //actuals
+    private val ALLOWED_ID = 0
+    private val ALLOWED_TITLE = "Test"
+    private val ALLOWED_NOTE = "Note"
+    private val ALLOWed_DATE = "5/5/2020"
+
+
+    //creates tests based on mock annotations
 
 
     @Before
     @Throws(Exception::class)
     fun setUp() {
+
+
         //set up activity
         activity = MainActivity()
 
+
+
     }
+
+
     @Test
     //checks if activity loads
     @Throws(java.lang.Exception::class)
@@ -45,7 +66,8 @@ public class UnitTests {
 
 
     }
-//test if activity 2 loads
+
+    //test if activity 2 loads
     @Test
 
     fun fragment_ShouldNOT_be_Null() {
@@ -55,26 +77,47 @@ public class UnitTests {
         // Then
         Assert.assertNotNull(fragment)
     }
+
     //test if fragment loads
     @Test
-    fun frag_should_not_be_null(){
+    fun frag_should_not_be_null() {
         val frag1 = ViewFragment()
         Assert.assertNotNull(frag1)
     }
-
-
     @Test
-    fun readStringFromContext_LocalizedString() {
-        // Given a Context object retrieved from Robolectric...
-        val myObjectUnderTest = NotesModel(0,"Test Note","myNote", "05/05/2020")
+    fun titleTest() {
+        val testTitleVal = "Test"
+        notesModel = NotesModel(0, "Test", "Note","5/5/2020")
 
-        // ...when the string is returned from the object under test...
-        val result: String = NotesModel(0,"Test Note","myNote", "05/05/2020").toString()
+        assertEquals(testTitleVal, notesModel.title, ALLOWED_TITLE)
 
-        // ...then the result should be the expected one.
-        var FAKE_STRING = NotesModel(1,"Test Note","myNote", "05/05/2020").toString()
-        Assert.assertNotEquals(FAKE_STRING, result)
     }
-}
+    @Test
+    fun noteTest() {
+        val testTitleVal = "Note"
+        notesModel = NotesModel(0, "Test", "Note","5/5/2020")
 
+        assertEquals(testTitleVal, notesModel.note, ALLOWED_NOTE)
+
+    }
+    @Test
+    fun dateTest() {
+
+        val testDateVal = "5/5/2020"
+        notesModel = NotesModel(0, "Test", "Note", "5/5/2020")
+
+        assertEquals(testDateVal, notesModel.date, ALLOWed_DATE)
+
+    }
+    @Test
+    fun idTest() {
+//serves as key or a double sided scale
+        val testIdVal = "key"
+        notesModel = NotesModel(0, "Test", "Note", "5/5/2020")
+
+        assertEquals(testIdVal, notesModel.id, ALLOWED_ID)
+
+    }
+
+}
 

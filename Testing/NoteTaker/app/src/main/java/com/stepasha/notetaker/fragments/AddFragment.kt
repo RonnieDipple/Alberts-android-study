@@ -15,11 +15,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class AddFragment : Fragment(), View.OnClickListener {
-
+//initialize db
     lateinit var mydb : DataHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view : View = inflater.inflate(R.layout.add_fragment, container,false)
+        //attach db to view
         mydb=DataHelper(context)
         view.btn_Save.setOnClickListener(this)
         return view
@@ -38,10 +39,10 @@ class AddFragment : Fragment(), View.OnClickListener {
             et_Notes.error = "Please, Insert a Note!"
             return
         }
-
+//initiating date within saving the note
         val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
         val date : String = sdf.format(Date())
-
+//once inserted populate and let me know
         var isInserted : Boolean = mydb.addNote(title,note,date)
         if(isInserted){
             Toast.makeText(context,"Saved Successfully",Toast.LENGTH_SHORT).show()

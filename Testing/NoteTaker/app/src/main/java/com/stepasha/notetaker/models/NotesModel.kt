@@ -2,7 +2,7 @@ package com.stepasha.notetaker.models
 
 import java.io.Serializable
 
-class NotesModel  : Serializable{
+open class NotesModel  : Serializable{
     var id: Int
     lateinit var title: String
     lateinit var note: String
