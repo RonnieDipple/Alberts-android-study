@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.item_card_list_notes.view.*
 
 
 class RecyclerViewForNotesAdapter : RecyclerView.Adapter<RecyclerViewForNotesAdapter.ViewHolder>{
-
+//list of notes
     lateinit var listdata : MutableList<NotesModel>
     lateinit var inflater : LayoutInflater
     lateinit var context : Context
@@ -47,10 +47,11 @@ class RecyclerViewForNotesAdapter : RecyclerView.Adapter<RecyclerViewForNotesAda
         var date = itemView.txt__Date
         var note = itemView.txt_Note
 
-
+        //setting on click on the view itself
         init {
             itemView.setOnClickListener(this)
         }
+        //then put in the context
         override fun onClick(v: View?) {
             val intent = Intent(itemView.context, ViewActivity::class.java)
             intent.putExtra("id",id.text.toString())

@@ -24,6 +24,7 @@ class SearchFragment : Fragment(), View.OnKeyListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view : View = inflater.inflate(R.layout.search_fragment, container,false)
+        //initialize
         mydb = DataHelper(context)
         listdata= ArrayList()
         view.recyclerviewsearch.setHasFixedSize(true)
@@ -40,11 +41,12 @@ class SearchFragment : Fragment(), View.OnKeyListener {
             return
         }
         val res = mydb.searchNote(query)
+        //if nothing is there  return the toast
         if(res.count==0){
             Toast.makeText(context,"Can't find the note you're looking for!",Toast.LENGTH_SHORT).show()
             return
         }
-
+//get stuff from sql db once found and add it to the notes
         while (res.moveToNext()){
             val dataNotes : NotesModel = NotesModel(res.getInt(0),res.getString(1)
                 ,res.getString(2),res.getString(3).substring(0,10))
@@ -53,6 +55,7 @@ class SearchFragment : Fragment(), View.OnKeyListener {
         recyclerviewsearch.adapter= RecyclerViewForNotesAdapter(listdata, this!!.context!!)
     }
 
+//responding to keyboard clicks
     override fun onKey(v: View?, keyCode: Int, event: KeyEvent?): Boolean {
         if (event != null) {
             if(event.action==KeyEvent.ACTION_DOWN){
