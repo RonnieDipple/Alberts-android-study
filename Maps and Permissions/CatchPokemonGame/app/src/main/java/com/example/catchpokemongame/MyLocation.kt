@@ -85,6 +85,9 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
         //normal player initialization
         player = MediaPlayer.create(this, R.raw.accomplished)
 
+        //play the sound where needed
+        player = MediaPlayer.create(this, R.raw.accomplished)
+
         //by far the easiest way to implement exo
         // reference: https://www.blueappsoftware.com/android-exoplayer-example/
 try {
@@ -199,8 +202,7 @@ try {
         mLatitudeTextView!!.text = location.latitude.toString()
         mLongitudeTextView!!.text = location.longitude.toString()
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
-        //play the sound where needed
-        player = MediaPlayer.create(this, R.raw.accomplished)
+
 
         // You can now create a LatLng Object for use with maps
         val latLng = LatLng(location.latitude, location.longitude)
