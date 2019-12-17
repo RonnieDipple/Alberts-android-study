@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
@@ -75,10 +76,14 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
     private val dashUrl =
         "https://ia801302.us.archive.org/18/items/gametrailers-2043_20130109/Pokemon%20X%20%26%20Pokemon%20Y%20-%20Debut%20Trailer-aajnLebXcI0.mp4"
     // "http://rdmedia.bbc.co.uk/dash/ondemand/bbb/2/client_manifest-separate_init.mpd"
-    private lateinit var mediaDataSourceFactory: DataSource.Factory
+    //now android built in player for sound effects
+    var player: MediaPlayer? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_location)
+
+        //normal player initialization
+        player = MediaPlayer.create(this, R.raw.accomplished)
 
         //by far the easiest way to implement exo
         // reference: https://www.blueappsoftware.com/android-exoplayer-example/
@@ -194,6 +199,9 @@ try {
         mLatitudeTextView!!.text = location.latitude.toString()
         mLongitudeTextView!!.text = location.longitude.toString()
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        //play the sound where needed
+        player = MediaPlayer.create(this, R.raw.accomplished)
+
         // You can now create a LatLng Object for use with maps
         val latLng = LatLng(location.latitude, location.longitude)
     }
