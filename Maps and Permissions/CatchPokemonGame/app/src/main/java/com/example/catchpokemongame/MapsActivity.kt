@@ -155,7 +155,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         // for list of pokemons
                         for(i in 0 until listPockemons.size){
                             var newPockemon = listPockemons[i]
-                            //if caught
+                            //if not caught
                             if(!newPockemon.isCatched){
                                 val pockemonLoc = LatLng(newPockemon.location!!.latitude, newPockemon.location!!.longitude)
 

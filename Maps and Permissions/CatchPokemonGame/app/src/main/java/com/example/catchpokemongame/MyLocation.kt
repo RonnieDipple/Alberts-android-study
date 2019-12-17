@@ -25,7 +25,9 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.activity_my_location.*
 
-
+//another way of pulling someones location.
+//instead of steadily fetching locations, it will return the result on request which is easier to pass around activities
+// referenced from androidclarified.com/fusedlocationproviderclient-current-location-example/
 private val TAG = "key"
 class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
     //declaring instances
@@ -73,7 +75,7 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
 
 
     }
-
+//this is the same as overriding onRequest permission result
     override fun onConnected(p0: Bundle?) {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -110,7 +112,7 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
     override fun onConnectionFailed(connectionResult: ConnectionResult) {
         Log.i(TAG, "Connection failed. Error: " + connectionResult.errorCode)
     }
-
+//good practice to stop any services on stop and on destroy, so they dont continue running when the user navigates away from the app
     override fun onStart() {
         super.onStart()
         if (mGoogleApiClient != null) {
@@ -124,6 +126,8 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
             mGoogleApiClient!!.disconnect()
         }
     }
+
+    //location listener
     override fun onLocationChanged(location: Location) {
 
         val msg = "Updated Location: " +
@@ -135,7 +139,7 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
         // You can now create a LatLng Object for use with maps
         val latLng = LatLng(location.latitude, location.longitude)
     }
-
+//location request is being used here for location updates
     private fun startLocationUpdates() {
         // Create the location request
         mLocationRequest = LocationRequest.create()
@@ -157,11 +161,13 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
             mLocationRequest, this)
         Log.d("reque", "--->>>>")
     }
+    //function to build custom alert box
     private fun showAlert() {
         val dialog = AlertDialog.Builder(this)
         dialog.setTitle("Enable Location")
             .setMessage("Your Locations Settings is set to 'Off'.\nPlease Enable Location to " + "use this app")
             .setPositiveButton("Location Settings") { paramDialogInterface, paramInt ->
+                //send user to the settings screen to change the permission
                 val myIntent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
                 startActivity(myIntent)
             }
