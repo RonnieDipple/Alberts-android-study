@@ -1,23 +1,34 @@
 package com.example.catchpokemongame
 
+
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
-import android.location.LocationListener
 import android.location.LocationManager
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
 import android.provider.Settings
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.google.android.exoplayer2.ExoPlayerFactory
+import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
+import com.google.android.exoplayer2.extractor.ExtractorsFactory
+import com.google.android.exoplayer2.source.ExtractorMediaSource
+import com.google.android.exoplayer2.source.MediaSource
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
+import com.google.android.exoplayer2.trackselection.TrackSelector
+import com.google.android.exoplayer2.upstream.BandwidthMeter
+import com.google.android.exoplayer2.upstream.DataSource
+import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationRequest
@@ -25,11 +36,12 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.activity_my_location.*
 
+
 //another way of pulling someones location.
 //instead of steadily fetching locations, it will return the result on request which is easier to pass around activities
 // referenced from androidclarified.com/fusedlocationproviderclient-current-location-example/
 private val TAG = "key"
-class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
+class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener{
     //declaring instances
     private var mLatitudeTextView: TextView? = null
     private var mLongitudeTextView: TextView? = null
@@ -39,7 +51,7 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
     private var mLocation: Location? = null
     //location manager
     private var mLocationManager: LocationManager? = null
-//location listeners
+    //location listeners
     private var mLocationRequest: LocationRequest? = null
     private val listener: com.google.android.gms.location.LocationListener? = null
     //update intervals
@@ -51,14 +63,48 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
     private val isLocationEnabled: Boolean
         get() {
             locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-            return locationManager!!.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager!!.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+            return locationManager!!.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager!!.isProviderEnabled(
+                LocationManager.NETWORK_PROVIDER
+            )
         }
-
-
+    //exo player
+    private lateinit var simpleExoplayer: SimpleExoPlayer
+    private lateinit var context: Context
+    //where to start video from
+    private var playbackPosition = 0L
+    private val dashUrl =
+        "https://ia801302.us.archive.org/18/items/gametrailers-2043_20130109/Pokemon%20X%20%26%20Pokemon%20Y%20-%20Debut%20Trailer-aajnLebXcI0.mp4"
+    // "http://rdmedia.bbc.co.uk/dash/ondemand/bbb/2/client_manifest-separate_init.mpd"
+    private lateinit var mediaDataSourceFactory: DataSource.Factory
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_location)
 
+        //by far the easiest way to implement exo
+        // reference: https://www.blueappsoftware.com/android-exoplayer-example/
+try {
+    //connection meeter
+    val bandwidthMeter: BandwidthMeter = DefaultBandwidthMeter()
+    //track selector
+    val trackSelector: TrackSelector = DefaultTrackSelector(bandwidthMeter)
+    //create an instance and parse the video
+    simpleExoplayer = ExoPlayerFactory.newSimpleInstance(this, trackSelector)
+    val videoURI = Uri.parse(dashUrl)
+    val dataSourceFactory =
+        DefaultHttpDataSourceFactory("exoplayer_video")
+    val extractorsFactory: ExtractorsFactory = DefaultExtractorsFactory()
+    //event listeners and handlers are for user interaction with video
+    val mediaSource: MediaSource =
+        ExtractorMediaSource(videoURI, dataSourceFactory, extractorsFactory, null, null)
+//then play the video once parsed
+    myEXo.player = simpleExoplayer
+    simpleExoplayer.prepare(mediaSource)
+    simpleExoplayer.playWhenReady = true
+    progressBar.visibility = View.GONE
+}catch (e: Exception){
+    Log.e("MainAcvtivity", " exoplayer error $e")
+    progressBar.visibility = View.VISIBLE
+}
         mLatitudeTextView = findViewById<TextView>(R.id.latitude_textview)
         mLongitudeTextView = findViewById<TextView>(R.id.longitude_textview)
 //set callbacks on connection to API
@@ -70,14 +116,22 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
 
         mLocationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-        Log.d("no","no connection to API")
+        Log.d("no", "no connection to API")
         checkLocation() //check whether location service is enable or not in your  phone
 
 
     }
-//this is the same as overriding onRequest permission result
+
+    //this is the same as overriding onRequest permission result
     override fun onConnected(p0: Bundle?) {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -112,9 +166,11 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
     override fun onConnectionFailed(connectionResult: ConnectionResult) {
         Log.i(TAG, "Connection failed. Error: " + connectionResult.errorCode)
     }
-//good practice to stop any services on stop and on destroy, so they dont continue running when the user navigates away from the app
+
+    //good practice to stop any services on stop and on destroy, so they dont continue running when the user navigates away from the app
     override fun onStart() {
         super.onStart()
+
         if (mGoogleApiClient != null) {
             mGoogleApiClient!!.connect()
         }
@@ -122,6 +178,8 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
 
     override fun onStop() {
         super.onStop()
+
+
         if (mGoogleApiClient!!.isConnected) {
             mGoogleApiClient!!.disconnect()
         }
@@ -139,7 +197,8 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
         // You can now create a LatLng Object for use with maps
         val latLng = LatLng(location.latitude, location.longitude)
     }
-//location request is being used here for location updates
+
+    //location request is being used here for location updates
     private fun startLocationUpdates() {
         // Create the location request
         mLocationRequest = LocationRequest.create()
@@ -147,7 +206,14 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
             .setInterval(UPDATE_INTERVAL)
             .setFastestInterval(FASTEST_INTERVAL)
         // Request location updates
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -157,10 +223,13 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
             // for ActivityCompat#requestPermissions for more details.
             return
         }
-        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,
-            mLocationRequest, this)
+        LocationServices.FusedLocationApi.requestLocationUpdates(
+            mGoogleApiClient,
+            mLocationRequest, this
+        )
         Log.d("reque", "--->>>>")
     }
+
     //function to build custom alert box
     private fun showAlert() {
         val dialog = AlertDialog.Builder(this)
@@ -183,5 +252,4 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
 
 
 }
-
 
