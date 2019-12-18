@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/myProfile"
+                android:icon="@mipmap/ic_launcher_round"
+                android:title="My Profile" />
+            <item
+                android:id="@+id/Play"
+                android:icon="@mipmap/ic_launcher_round"
+                android:title="Play" />
+            <item
+                android:id="@+id/mySetting"
+                android:icon="@mipmap/ic_launcher_round"
+                android:title="Setting" />
+        </group>
+</menu>

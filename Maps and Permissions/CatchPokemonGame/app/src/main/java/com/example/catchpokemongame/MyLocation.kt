@@ -12,12 +12,18 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
@@ -27,7 +33,6 @@ import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.trackselection.TrackSelector
 import com.google.android.exoplayer2.upstream.BandwidthMeter
-import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory
 import com.google.android.gms.common.ConnectionResult
@@ -35,6 +40,7 @@ import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_my_location.*
 
 
@@ -78,57 +84,74 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
     // "http://rdmedia.bbc.co.uk/dash/ondemand/bbb/2/client_manifest-separate_init.mpd"
     //now android built in player for sound effects
     var player: MediaPlayer? = null
+
+    private lateinit var mDrawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_location)
+        //adding a toolbar 1
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+//just turning ids into variables
+        mDrawerLayout = findViewById(R.id.drawer_layout)
+        val navigationView: NavigationView = findViewById(R.id.nav_view)
+        //setting a button on an app bar
+        val actionbar: ActionBar? = supportActionBar
+        actionbar?.apply {
+            //should activity title be displayed
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_menu)
+        }
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            // set item as selected to persist highlight
+            menuItem.isChecked = true
+            // close drawer when item is tapped
+            mDrawerLayout.closeDrawers()
+            // Handle navigation view item clicks here.
+            when (menuItem.itemId) {
+                R.id.myProfile -> {
+                    player?.start()
+                    val intent = Intent(this, MyLocation::class.java)
+                    startActivity(intent)
+                }
+                R.id.Play -> {
+                    player?.start()
+                    val intent = Intent(this, MapsActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.mySetting -> {
+                    player?.start()
+                    Toast.makeText(this, "Settings Coming Soon", Toast.LENGTH_LONG).show()
+                }
+            }
+            // Add code here to update the UI based on the item selected
+            // For example, swap UI fragments here
+            true
+        }
 
-        //normal player initialization
-        player = MediaPlayer.create(this, R.raw.accomplished)
+            //normal player initialization
+            player = MediaPlayer.create(this, R.raw.accomplished)
 
-        //play the sound where needed
-        player = MediaPlayer.create(this, R.raw.accomplished)
+            //play the sound where needed
+            player = MediaPlayer.create(this, R.raw.accomplished)
 
-        //by far the easiest way to implement exo
-        // reference: https://www.blueappsoftware.com/android-exoplayer-example/
-try {
-    //connection meeter
-    val bandwidthMeter: BandwidthMeter = DefaultBandwidthMeter()
-    //track selector
-    val trackSelector: TrackSelector = DefaultTrackSelector(bandwidthMeter)
-    //create an instance and parse the video
-    simpleExoplayer = ExoPlayerFactory.newSimpleInstance(this, trackSelector)
-    val videoURI = Uri.parse(dashUrl)
-    val dataSourceFactory =
-        DefaultHttpDataSourceFactory("exoplayer_video")
-    val extractorsFactory: ExtractorsFactory = DefaultExtractorsFactory()
-    //event listeners and handlers are for user interaction with video
-    val mediaSource: MediaSource =
-        ExtractorMediaSource(videoURI, dataSourceFactory, extractorsFactory, null, null)
-//then play the video once parsed
-    myEXo.player = simpleExoplayer
-    simpleExoplayer.prepare(mediaSource)
-    simpleExoplayer.playWhenReady = true
-    progressBar.visibility = View.GONE
-}catch (e: Exception){
-    Log.e("MainAcvtivity", " exoplayer error $e")
-    progressBar.visibility = View.VISIBLE
-}
-        mLatitudeTextView = findViewById<TextView>(R.id.latitude_textview)
-        mLongitudeTextView = findViewById<TextView>(R.id.longitude_textview)
+
+            mLatitudeTextView = findViewById<TextView>(R.id.latitude_textview)
+            mLongitudeTextView = findViewById<TextView>(R.id.longitude_textview)
 //set callbacks on connection to API
-        mGoogleApiClient = GoogleApiClient.Builder(this)
-            .addConnectionCallbacks(this)
-            .addOnConnectionFailedListener(this)
-            .addApi(LocationServices.API)
-            .build()
+            mGoogleApiClient = GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build()
 
-        mLocationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+            mLocationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
-        Log.d("no", "no connection to API")
-        checkLocation() //check whether location service is enable or not in your  phone
+            Log.d("no", "no connection to API")
+            checkLocation() //check whether location service is enable or not in your  phone
 
 
-    }
+        }
 
     //this is the same as overriding onRequest permission result
     override fun onConnected(p0: Bundle?) {
@@ -179,6 +202,39 @@ try {
     override fun onStart() {
         super.onStart()
 
+
+        //moved to on start instead of on create for faster loading
+        //by far the easiest way to implement exo
+        // reference: https://www.blueappsoftware.com/android-exoplayer-example/
+        try {
+            //connection meeter
+            val bandwidthMeter: BandwidthMeter = DefaultBandwidthMeter()
+            //track selector
+            val trackSelector: TrackSelector = DefaultTrackSelector(bandwidthMeter)
+            //create an instance and parse the video
+            simpleExoplayer = ExoPlayerFactory.newSimpleInstance(this, trackSelector)
+            val videoURI = Uri.parse(dashUrl)
+            val dataSourceFactory =
+                DefaultHttpDataSourceFactory("exoplayer_video")
+            val extractorsFactory: ExtractorsFactory = DefaultExtractorsFactory()
+            //event listeners and handlers are for user interaction with video
+            val mediaSource: MediaSource =
+                ExtractorMediaSource(videoURI, dataSourceFactory, extractorsFactory, null, null)
+//then play the video once parsed
+            myEXo.player = simpleExoplayer
+            simpleExoplayer.prepare(mediaSource)
+            simpleExoplayer.playWhenReady = true
+            progressBar.visibility = View.GONE
+        } catch (e: Exception) {
+            Log.e("MainAcvtivity", " exoplayer error $e")
+            progressBar.visibility = View.VISIBLE
+        }
+
+
+
+
+
+
         if (mGoogleApiClient != null) {
             mGoogleApiClient!!.connect()
         }
@@ -186,6 +242,7 @@ try {
 
     override fun onStop() {
         super.onStop()
+        simpleExoplayer.release()
 
 
         if (mGoogleApiClient!!.isConnected) {
@@ -259,7 +316,15 @@ try {
             showAlert()
         return isLocationEnabled
     }
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                mDrawerLayout.openDrawer(GravityCompat.START)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
 }
 
