@@ -120,3 +120,31 @@ also app contains the stops on how to set up on click listeners using Lambda
 13. Networking Sprint Challenge Pokemon API  
 Redone from scratch. Using Okhttp3, Retrofit2, Recyclerview, CardView, Picasso to loasd the sprites(images)  
 
+14. Project NoteTaker Testing  
+
+In the nutshell :  
+Robolectric allows testing on local machine without emulator or physical device  
+Robolectric is good for integration testing  
+JUnit4 testing is used for unit testing, works with robolectric   
+Esspresso is used for UI testing.  
+
+15. Project Catch Pokemon Game
+
+Maps Activity    
+implements onCallbackReady on maps   
+initialize maps and request permissions at runtime  
+
+MyLocation  
+Is similar way to maps activity but no map.  
+Implements Google Play Services listener to listen to network and listen to multiple APIs  
+
+Popup navigation Drawer  
+Change layout to navigation layout  
+need library for material design to get the popup menu  
+options menu to call the popup menu  
+custom toolbar  
+
+ExoPlayer is used to play the web video at app launch  
+Media Player is used for app sound effects  
+Both player are essentially the same only Exo player is more customizable  
+
