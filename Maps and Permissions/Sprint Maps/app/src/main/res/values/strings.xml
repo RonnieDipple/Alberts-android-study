@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Sprint Maps</string>
     <string name="title_activity_maps">Map</string>
-    <string name="apikey">AIzaSyBd8__jNECLlJjta-IzWgzN4gxeWKgNdME</string>
+    <string name="apikey">AIzaSyC7g4kMZxnLt67oMv9VvW9ZYihk6M_JkcY</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

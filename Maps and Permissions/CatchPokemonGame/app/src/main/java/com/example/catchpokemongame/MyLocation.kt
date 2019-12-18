@@ -132,8 +132,6 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
             //normal player initialization
             player = MediaPlayer.create(this, R.raw.accomplished)
 
-            //play the sound where needed
-            player = MediaPlayer.create(this, R.raw.accomplished)
 
 
             mLatitudeTextView = findViewById<TextView>(R.id.latitude_textview)
@@ -149,6 +147,8 @@ class MyLocation : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goo
 
             Log.d("no", "no connection to API")
             checkLocation() //check whether location service is enable or not in your  phone
+
+
 
 
         }
