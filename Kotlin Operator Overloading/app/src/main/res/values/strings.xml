@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Shopping Calculator</string>
+    <string name="enter_item">Enter Item:</string>
+    <string name="item_name">Item Name</string>
+    <string name="price">Price</string>
+    <string name="add">+</string>
+    <string name="my_list">My List</string>
+    <string name="item_total">ITEM TOTAL</string>
+    <string name="_0_00">$0.00</string>
+    <string name="city_rate">CITY RATE:</string>
+    <string name="_2_5">2.5%</string>
+    <string name="_7">7%</string>
+    <string name="total">TOTAL:</string>
+
 </resources>
