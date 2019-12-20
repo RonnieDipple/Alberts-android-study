@@ -22,12 +22,26 @@ class MainActivity : AppCompatActivity() {
             val myPrice = edittextItemPrice.text.toString().toDouble()
             val myItemPrice = "$myItem and $myPrice"
             myShoppingList.add(ShoppingItem(myItem, myPrice))
-            textviewMyList.text = "$myShoppingList"
+            textviewMyList.text = myShoppingList.toString()
             var sum = 0.0
             for (i in myShoppingList) {
                 sum += i.price!!.toDouble()
                 textviewItemTotal.text = sum.toString()
             }
+            val taxRate = sum
+            if (checkbox1.isChecked){
+                val denverRate = 0.075
+              val denverRateTotal= taxRate * denverRate
+                textviewTotalInNumber.text = denverRateTotal.toString()
+            }else if (checkbox2.isChecked){
+                val auroraRate = 0.02
+                val auroraRateTotal = taxRate * auroraRate
+                textviewTotalInNumber.text = auroraRateTotal.toString()
+            }else{
+                textviewTotalInNumber.text = sum.toString()
+            }
+
+
 
 
 
@@ -37,4 +51,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
 }
+
