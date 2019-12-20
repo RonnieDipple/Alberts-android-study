@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dependency Injection</string>
+    <string name="someone_like_you">Someone Like You</string>
+    <string name="adele">Adele</string>
 </resources>
