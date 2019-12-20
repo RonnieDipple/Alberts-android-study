@@ -61,15 +61,15 @@
 
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="411dp"
+        android:layout_height="227dp"
         android:text="Hello World!"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edittextItemName"
-        app:layout_constraintVertical_bias="0.369">
+        app:layout_constraintVertical_bias="0.75">
 
         <TextView
             android:id="@+id/textviewMyList"
@@ -86,7 +86,6 @@
             app:layout_constraintVertical_bias="0.832" />
     </ScrollView>
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -99,33 +98,33 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintVertical_bias="0.711" />
 
     <TextView
         android:id="@+id/textviewItemTotal"
-        android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/_0_00"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.76"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
-
-    <TextView
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/city_rate"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.711" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_rate"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794" />
 
     <CheckBox
         android:id="@+id/checkbox1"
@@ -134,11 +133,11 @@
         android:text="@string/_2_5"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.794" />
 
     <CheckBox
         android:id="@+id/checkbox2"
@@ -147,25 +146,25 @@
         android:text="@string/_7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.711" />
+        app:layout_constraintVertical_bias="0.794" />
 
     <TextView
-        android:textColor="@color/colorPrimaryDark"
         android:id="@+id/textviewTotal"
-        android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/total"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814" />
+        app:layout_constraintVertical_bias="0.884" />
 
     <TextView
         android:id="@+id/textviewTotalInNumber"
@@ -174,10 +173,10 @@
         android:text="@string/_0_00"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814" />
+        app:layout_constraintVertical_bias="0.884" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
