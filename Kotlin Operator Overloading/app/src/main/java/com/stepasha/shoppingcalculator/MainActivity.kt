@@ -11,27 +11,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val myShoppingList = arrayListOf<ShoppingItem>()
+        val myShoppingList = mutableListOf<ShoppingItem>()
 
         val myItem = edittextItemName.text.toString()
         val myPrice = edittextItemPrice.text.toString()
         val myItemPrice = "$myItem and $myPrice"
 
+
         buttonAdd.setOnClickListener {
             val myItem = edittextItemName.text.toString()
             val myPrice = edittextItemPrice.text.toString().toDouble()
             val myItemPrice = "$myItem and $myPrice"
-            myShoppingList.add(ShoppingItem(myItem, myPrice))
+            myShoppingList.plusAssign(ShoppingItem(myItem, myPrice))
 
             textviewMyList.text = myShoppingList.toString()
-
-
             var sum = 0.0
-            for (i in myShoppingList) {
-                sum += i.price!!.toDouble()
-                textviewItemTotal.text = sum.toString()
-            }
-            val taxRate = sum
+
+          for (i in myShoppingList) {
+              sum += i.price!!.toDouble()
+              textviewItemTotal.text = sum.toString()
+          }
+          val taxRate = sum
             when {
                 checkbox1.isChecked -> {
                     val denverRate = 0.075

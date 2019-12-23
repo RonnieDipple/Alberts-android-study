@@ -7,7 +7,19 @@ data class ShoppingItem(var shoppingItem: String?, var price: Double?){
 
     }
 
+
+
+    override fun toString(): String {
+
+
+
+        return  "$shoppingItem" +
+                "$price\n"
+    }
+
 }
+
+
 
 
 
