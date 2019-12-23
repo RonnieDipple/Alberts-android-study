@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.gson.Gson
 import com.stepasha.dependencyinjection.adapter.RecyclerViewAdapter
 import com.stepasha.dependencyinjection.model.Songs
@@ -27,10 +28,11 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var makeupService: RetrofitNetworkInterface
 
-
+    private var mFirebaseAnalytics: FirebaseAnalytics? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
         (application as App).appComponent.inject(this)
 
