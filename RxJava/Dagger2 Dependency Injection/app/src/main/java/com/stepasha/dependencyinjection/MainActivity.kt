@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.crashlytics.android.Crashlytics
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.gson.Gson
 import com.stepasha.dependencyinjection.adapter.RecyclerViewAdapter
@@ -64,6 +65,19 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter a brand", Toast.LENGTH_SHORT).show()
             }
         }
+
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "Back Button Press")
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1")
+        mFirebaseAnalytics?.logEvent(FirebaseAnalytics.Event.SHARE, bundle)
+        //custom log message
+        Crashlytics.log("Dont press the back button!")
+        Crashlytics.getInstance().crash() // Force a crash
 
 
     }
