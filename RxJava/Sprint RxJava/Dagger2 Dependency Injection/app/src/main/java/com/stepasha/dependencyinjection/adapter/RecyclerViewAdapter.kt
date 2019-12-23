@@ -24,6 +24,7 @@ class RecyclerViewAdapter(private val data: Array<Item>) :
         val imageView: ImageView = view.itemImage
         val itemName: TextView = view.itemName
         val itemDetail: TextView = view.itemDetail
+        val itemColors: TextView = view.itemColors
         val card: CardView = view.direction_card_view
 
     }
@@ -48,5 +49,6 @@ class RecyclerViewAdapter(private val data: Array<Item>) :
             .into(holder.imageView)
         holder.itemName.text = data[position].brand
         holder.itemDetail.text = data[position].description
+        holder.itemColors.text = data[position].product_colors.toString()
     }
 }
