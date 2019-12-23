@@ -24,10 +24,18 @@
         android:layout_height="wrap_content"
         android:hint="try serching fopr brand" />
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enterText"
+        android:layout_marginTop="-45dp">
+
+    </GridLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_width="436dp"
+        android:layout_height="612dp"
         android:layout_below="@+id/enterText"
         android:layout_marginTop="15dp"
         android:orientation="vertical"

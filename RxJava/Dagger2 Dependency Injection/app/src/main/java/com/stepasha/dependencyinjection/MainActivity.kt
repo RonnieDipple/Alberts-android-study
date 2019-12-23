@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
 
         recycle.setHasFixedSize(true)
-        recycle.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        recycle.layoutManager = GridLayoutManager(this, 3)
 
 
 
