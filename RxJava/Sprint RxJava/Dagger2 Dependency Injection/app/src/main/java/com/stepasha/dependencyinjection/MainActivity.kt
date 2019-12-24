@@ -39,13 +39,13 @@ class MainActivity : AppCompatActivity() {
 
             val searchedFor = enterText.text.toString()
 
-            if (searchedFor.isNotEmpty()) {
+            if (searchedFor.isNotEmpty() && searchedFor.contains(searchedFor)) {
 
                 disposable = makeupService.getMakeup(searchedFor)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ brand ->
-                        if (brand.isNotEmpty()) {
+                        if (brand.isNotEmpty() ) {
                             recycle.adapter = RecyclerViewAdapter(brand)
                         } else {
                             Toast.makeText(this, "Brand not found", Toast.LENGTH_SHORT).show()
