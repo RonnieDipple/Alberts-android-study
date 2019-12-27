@@ -35,6 +35,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter
             .antMatchers("/",
                     "/users/**",
                     "/maps/**",
+                    "/**",
+                         "oauth/**",
                          "/h2-console/**",
                          "/swagger-resources/**",
                          "/swagger-resource/**",

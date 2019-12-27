@@ -1,0 +1,7 @@
+INSERT INTO pg_catalog.pg_stat_database_conflicts (datid, datname, confl_tablespace, confl_lock, confl_snapshot, confl_bufferpin, confl_deadlock) VALUES (13318, 'postgres', 0, 0, 0, 0, 0);
+INSERT INTO pg_catalog.pg_stat_database_conflicts (datid, datname, confl_tablespace, confl_lock, confl_snapshot, confl_bufferpin, confl_deadlock) VALUES (1, 'template1', 0, 0, 0, 0, 0);
+INSERT INTO pg_catalog.pg_stat_database_conflicts (datid, datname, confl_tablespace, confl_lock, confl_snapshot, confl_bufferpin, confl_deadlock) VALUES (13317, 'template0', 0, 0, 0, 0, 0);
+INSERT INTO pg_catalog.pg_stat_database_conflicts (datid, datname, confl_tablespace, confl_lock, confl_snapshot, confl_bufferpin, confl_deadlock) VALUES (17064, 'budget', 0, 0, 0, 0, 0);
+INSERT INTO pg_catalog.pg_stat_database_conflicts (datid, datname, confl_tablespace, confl_lock, confl_snapshot, confl_bufferpin, confl_deadlock) VALUES (17089, 'mem:testdb', 0, 0, 0, 0, 0);
+INSERT INTO pg_catalog.pg_stat_database_conflicts (datid, datname, confl_tablespace, confl_lock, confl_snapshot, confl_bufferpin, confl_deadlock) VALUES (25064, 'starthere', 0, 0, 0, 0, 0);
+INSERT INTO pg_catalog.pg_stat_database_conflicts (datid, datname, confl_tablespace, confl_lock, confl_snapshot, confl_bufferpin, confl_deadlock) VALUES (47707, 'northwind', 0, 0, 0, 0, 0);

@@ -47,8 +47,8 @@ public class OpenController
     // http://localhost:2222/createnewuser?access=false
     //
     // {
-    //     "username" : "Mojo",
-    //     "password" : "corgie",
+    //     "username" : "test1",
+    //     "password" : "test1",
     //     "primaryemail" : "home@local.house"
     // }
 

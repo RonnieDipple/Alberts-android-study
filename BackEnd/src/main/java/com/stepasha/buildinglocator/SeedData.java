@@ -46,7 +46,7 @@ public class SeedData implements CommandLineRunner
                                  r3));
         User u1 = new User("https://upload.wikimedia.org/wikipedia/en/d/dc/MichaelScott.png",
                            "admin",
-                           "Acura35RL!",
+                           "password",
                            "mrayakubov@hotmail.com",
                            "Albert",
                            "Yakubov",
