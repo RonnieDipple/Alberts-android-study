@@ -29,9 +29,9 @@ public class SimpleCorsFilter implements Filter
         // response.setHeader("Access-Control-Allow-Methods",
         //                   "*");
         response.setHeader("Access-Control-Allow-Headers",
-                "x-requested-with, authorization, content-type, access_token");
-        // response.setHeader("Access-Control-Allow-Headers",
-        //                   "*");
+                "x-requested-with, Authorization, content-type, access_token");
+        response.setHeader("Access-Control-Allow-Headers",
+                           "*");
         response.setHeader("Access-Control-Max-Age",
                 "3600");
         if (HttpMethod.OPTIONS.name()

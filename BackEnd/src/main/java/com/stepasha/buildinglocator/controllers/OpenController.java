@@ -79,7 +79,6 @@ public class OpenController
 
         // Create the user
         User newuser = new User();
-        newuser.setProfilepicture(newminuser.getProfilepicture());
         newuser.setUsername(newminuser.getUsername());
         newuser.setPassword(newminuser.getPassword());
         newuser.setPrimaryemail(newminuser.getPrimaryemail());
