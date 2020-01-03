@@ -118,7 +118,7 @@
     </dependencies>
 
     <build>
-        <finalName>buildinglocator</finalName>
+        <finalName>building-locator</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
