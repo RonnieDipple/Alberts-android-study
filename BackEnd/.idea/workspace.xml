@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c53dda9-af4e-481a-9457-23a2dce36cb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4aa7d173-021a-44af-8764-d01d064c7f0a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4aa7d173-021a-44af-8764-d01d064c7f0a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd2cd065-43f4-4666-94b5-a8eb700e8ca2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd2cd065-43f4-4666-94b5-a8eb700e8ca2.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9c53dda9-af4e-481a-9457-23a2dce36cb6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,6 +224,7 @@
       <workItem from="1578300832757" duration="457000" />
       <workItem from="1578328679715" duration="789000" />
       <workItem from="1578351636793" duration="17000" />
+      <workItem from="1578353163783" duration="254000" />
     </task>
     <servers />
   </component>
@@ -277,10 +275,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1577476390258" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1578293009952">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1578353415440">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578293009952" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578353415440" />
     <state width="1237" height="160" key="GridCell.Tab.0.bottom" timestamp="1578329477086">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
