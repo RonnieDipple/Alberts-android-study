@@ -42,7 +42,7 @@ public class MapServiceImpl implements MapService {
         newMap.setAddress(art.getAddress());
         newMap.setDescription(art.getDescription());
         newMap.setAdditionalInfo(art.getAdditionalInfo());
-        newMap.setUser(art.getUser());
+
 
         return mapRepository.save(newMap);
     }
@@ -65,9 +65,7 @@ public class MapServiceImpl implements MapService {
         if (art.getAdditionalInfo() != null) {
             currentMap.setAdditionalInfo(art.getAdditionalInfo());
         }
-        if (art.getUser() != null){
-            currentMap.setUser(art.getUser());
-        }
+
 
         return mapRepository.save(currentMap);
     }

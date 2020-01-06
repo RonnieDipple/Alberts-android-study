@@ -59,11 +59,11 @@ private String profilepicture;
     @JsonIgnoreProperties("user")
     private List<Useremail> useremails = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JsonIgnoreProperties("user")
-    private List<Map> maps = new ArrayList<>();
+  @OneToMany(mappedBy = "user",
+          cascade = CascadeType.ALL,
+          orphanRemoval = true)
+  @JsonIgnoreProperties("user")
+  private List<Map> maps = new ArrayList<>();
     public User(){}
 
     public User(String profilepicture, String username, String password, @Email String primaryemail, String firstname, String lastname, int age, String location, List<UserRoles> userroles) {
@@ -127,13 +127,6 @@ private String profilepicture;
         this.location = location;
     }
 
-    public List<Map> getMaps() {
-        return maps;
-    }
-
-    public void setMaps(List<Map> maps) {
-        this.maps = maps;
-    }
 
     public long getUserid()
     {

@@ -17,7 +17,7 @@ public class Map extends Auditable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long mapid;
     @Column(nullable = true)
-    private Date posteddate;
+    private String posteddate;
     @Column(nullable = true)
     private String imageurl;
     @Column(nullable = true)
@@ -34,16 +34,16 @@ public class Map extends Auditable {
 
 
 
-   @ManyToOne
-   @JoinColumn(name = "users",
-           nullable = true)
-   @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-   private User user;
+ @ManyToOne
+ @JoinColumn(name = "users",
+         nullable = true)
+ @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+ private User user;
 
 
     public Map(){}
 
-    public Map(Date posteddate, String imageurl, String address, String description, String additionalInfo, User user) {
+    public Map(String posteddate, String imageurl, String address, String description, String additionalInfo, User user) {
         this.posteddate = posteddate;
         this.imageurl = imageurl;
         this.address = address;
@@ -61,11 +61,11 @@ public class Map extends Auditable {
         this.mapid = mapid;
     }
 
-    public Date getPosteddate() {
+    public String getPosteddate() {
         return posteddate;
     }
 
-    public void setPosteddate(Date posteddate) {
+    public void setPosteddate(String posteddate) {
         this.posteddate = posteddate;
     }
 
