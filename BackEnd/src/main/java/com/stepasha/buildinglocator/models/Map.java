@@ -5,6 +5,7 @@ import com.stepasha.buildinglocator.logging.Loggable;
 import javax.persistence.*;
 import java.util.Date;
 
+
 //TODO 31 Art Model Class
 
 @Loggable
