@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
+
     <list default="true" id="9c53dda9-af4e-481a-9457-23a2dce36cb6" name="Default Changelist" comment="" />
+
+    <list default="true" id="9c53dda9-af4e-481a-9457-23a2dce36cb6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stepasha/buildinglocator/models/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stepasha/buildinglocator/models/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stepasha/buildinglocator/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stepasha/buildinglocator/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stepasha/buildinglocator/services/MapServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stepasha/buildinglocator/services/MapServiceImpl.java" afterDir="false" />
+    </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +28,65 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
+
     <expand />
+
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
+        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
+        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
+        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
+        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
+        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="sequences" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
+        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="buildinglocator" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="buildinglocator" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -80,7 +145,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/stepasha/buildinglocator" />
+
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../and3java/SecureZoo/java_safezoos/java_safezoos/zoo" />
+
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -169,8 +238,10 @@
       <workItem from="1578295999128" duration="433000" />
       <workItem from="1578300832757" duration="457000" />
       <workItem from="1578328679715" duration="789000" />
+
       <workItem from="1578351636793" duration="17000" />
       <workItem from="1578353163783" duration="254000" />
+
     </task>
     <servers />
   </component>
@@ -185,10 +256,12 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="234" y="0" key="#Assign_Data_Sources/0.0.1280.680@0.0.1280.680" timestamp="1578293292398" />
+
     <state x="299" y="0" width="696" height="680" key="#BuildinglocatorApplication" timestamp="1578378946958">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="299" y="0" width="696" height="680" key="#BuildinglocatorApplication/0.0.1280.680@0.0.1280.680" timestamp="1578378946958" />
+
     <state x="233" y="0" key="#Notifications" timestamp="1578293614955">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -213,10 +286,12 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1577432650844" />
+
     <state x="377" y="125" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578378943103">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="377" y="125" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1578378943103" />
+
     <state x="302" y="248" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1578074094181">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -229,6 +304,7 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1577476390258" />
+
     <state x="421" y="70" key="FileChooserDialogImpl" timestamp="1578378969012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -249,6 +325,28 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="30" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578377481387" />
+
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1578293009952">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578293009952" />
+    <state width="1237" height="160" key="GridCell.Tab.0.bottom" timestamp="1578329477086">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="160" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
+    <state width="1237" height="160" key="GridCell.Tab.0.center" timestamp="1578329477086">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="160" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
+    <state width="1237" height="160" key="GridCell.Tab.0.left" timestamp="1578329477086">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="160" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
+    <state width="1237" height="160" key="GridCell.Tab.0.right" timestamp="1578329477086">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="160" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
+
     <state width="1237" height="160" key="GridCell.Tab.1.bottom" timestamp="1578329477086">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -293,6 +391,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1578378980412" />
+
+    <state x="121" y="0" key="SettingsEditor" timestamp="1578295960790">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1578295960790" />
     <state x="452" y="120" key="chooseDestDirectoryDialog" timestamp="1577508296512">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -309,6 +412,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="336" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1578353163805" />
+
+    <state x="336" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1578328727028">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="336" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1578328727028" />
     <state x="398" y="60" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1578296113120">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -317,6 +425,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="181" y="47" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1578378977685" />
+    <state x="181" y="47" key="new project wizard" timestamp="1578066436217">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="181" y="47" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1578066436217" />
+ 
     <state x="298" y="153" width="672" height="677" key="run.anything.popup" timestamp="1578300975573">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
