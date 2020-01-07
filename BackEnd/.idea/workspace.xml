@@ -21,61 +21,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
-        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
-        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
-        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
-        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
-        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
-        <item name="sequences" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="building-locator" type="feb32156:DbDataSourceImpl" />
-        <item name="BUILDING-LOCATOR: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="buildinglocator" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="buildinglocator" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -279,22 +225,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578353415440" />
-    <state width="1237" height="160" key="GridCell.Tab.0.bottom" timestamp="1578329477086">
+    <state width="1237" height="30" key="GridCell.Tab.0.bottom" timestamp="1578377481388">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="160" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
-    <state width="1237" height="160" key="GridCell.Tab.0.center" timestamp="1578329477086">
+    <state width="1237" height="30" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578377481388" />
+    <state width="1237" height="30" key="GridCell.Tab.0.center" timestamp="1578377481387">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="160" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
-    <state width="1237" height="160" key="GridCell.Tab.0.left" timestamp="1578329477086">
+    <state width="1237" height="30" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578377481387" />
+    <state width="1237" height="30" key="GridCell.Tab.0.left" timestamp="1578377481387">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="160" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
-    <state width="1237" height="160" key="GridCell.Tab.0.right" timestamp="1578329477086">
+    <state width="1237" height="30" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578377481387" />
+    <state width="1237" height="30" key="GridCell.Tab.0.right" timestamp="1578377481387">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="160" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578329477086" />
+    <state width="1237" height="30" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578377481387" />
     <state width="1237" height="160" key="GridCell.Tab.1.bottom" timestamp="1578329477086">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -343,6 +289,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="452" y="120" key="chooseDestDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1577508296512" />
+    <state x="396" y="186" key="cloudConfig.PluginsDialog" timestamp="1578377475897">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="396" y="186" key="cloudConfig.PluginsDialog/0.0.1280.680@0.0.1280.680" timestamp="1578377475897" />
     <state x="396" y="186" key="cloudConfig.SelfSettingsDialog" timestamp="1578068699136">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
