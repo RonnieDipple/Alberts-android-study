@@ -185,6 +185,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="234" y="0" key="#Assign_Data_Sources/0.0.1280.680@0.0.1280.680" timestamp="1578293292398" />
+    <state x="299" y="0" width="696" height="680" key="#BuildinglocatorApplication" timestamp="1578378946958">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="299" y="0" width="696" height="680" key="#BuildinglocatorApplication/0.0.1280.680@0.0.1280.680" timestamp="1578378946958" />
     <state x="233" y="0" key="#Notifications" timestamp="1578293614955">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -209,6 +213,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="51" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1577432650844" />
+    <state x="377" y="125" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578378943103">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="377" y="125" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1578378943103" />
     <state x="302" y="248" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath" timestamp="1578074094181">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -221,10 +229,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1577476390258" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1578353415440">
+    <state x="421" y="70" key="FileChooserDialogImpl" timestamp="1578378969012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578353415440" />
+    <state x="421" y="70" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578378969012" />
     <state width="1237" height="30" key="GridCell.Tab.0.bottom" timestamp="1578377481388">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -281,10 +289,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="172" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1578294333726" />
-    <state x="121" y="0" key="SettingsEditor" timestamp="1578295960790">
+    <state x="121" y="0" key="SettingsEditor" timestamp="1578378980412">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1578295960790" />
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1578378980412" />
     <state x="452" y="120" key="chooseDestDirectoryDialog" timestamp="1577508296512">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -305,10 +313,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="398" y="60" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.680@0.0.1280.680" timestamp="1578296113120" />
-    <state x="181" y="47" key="new project wizard" timestamp="1578066436217">
+    <state x="181" y="47" key="new project wizard" timestamp="1578378977685">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="181" y="47" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1578066436217" />
+    <state x="181" y="47" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1578378977685" />
     <state x="298" y="153" width="672" height="677" key="run.anything.popup" timestamp="1578300975573">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
